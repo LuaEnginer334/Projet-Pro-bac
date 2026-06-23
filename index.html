@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Sécurité Incendie & Sûreté</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- SECTION ACCUEIL -->
+        <section id="welcome-section" class="section active">
+            <div class="welcome-content">
+                <div class="logo">🔥🚨</div>
+                <h1>Quiz Sécurité Incendie & Sûreté</h1>
+                <p class="subtitle">Testez vos connaissances en matière de sécurité</p>
+                
+                <div class="quiz-info">
+                    <div class="info-item">
+                        <span class="info-icon">📝</span>
+                        <span>20 Questions</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">⏱️</span>
+                        <span>30s par question</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🎯</span>
+                        <span>3 Types de questions</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="startQuiz()">Commencer le Quiz</button>
+            </div>
+        </section>
+
+        <!-- SECTION QUIZ -->
+        <section id="quiz-section" class="section">
+            <div class="quiz-container">
+                <!-- Progress bar -->
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+
+                <!-- Question counter -->
+                <div class="question-counter">
+                    <span id="current-question">1</span> / <span id="total-questions">20</span>
+                </div>
+
+                <!-- Timer -->
+                <div class="timer-container">
+                    <div class="timer" id="timer">30</div>
+                    <span class="timer-label">secondes</span>
+                </div>
+
+                <!-- Score en temps réel -->
+                <div class="score-display">
+                    Score: <span id="current-score">0</span>/<span id="max-score">0</span>
+                </div>
+
+                <!-- Question -->
+                <div class="question-box">
+                    <h2 id="question-text"></h2>
+                    <p class="question-type" id="question-type"></p>
+                </div>
+
+                <!-- Réponses -->
+                <div class="answers-container" id="answers-container"></div>
+
+                <!-- Boutons navigation -->
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" id="prev-btn" onclick="previousQuestion()" style="display:none;">← Précédent</button>
+                    <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()">Suivant →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION RÉSULTATS -->
+        <section id="results-section" class="section">
+            <div class="results-container">
+                <div class="results-header">
+                    <h1>Résultats</h1>
+                    <div class="final-score" id="final-score-display"></div>
+                </div>
+
+                <div class="results-details">
+                    <div class="result-item">
+                        <span class="result-label">Bonnes réponses:</span>
+                        <span class="result-value" id="correct-count">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Mauvaises réponses:</span>
+                        <span class="result-value" id="wrong-count">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Pourcentage:</span>
+                        <span class="result-value" id="percentage">0%</span>
+                    </div>
+                </div>
+
+                <div class="results-feedback" id="results-feedback"></div>
+
+                <!-- Review des réponses -->
+                <div class="review-section">
+                    <h3>Examen de vos réponses</h3>
+                    <div class="review-list" id="review-list"></div>
+                </div>
+
+                <!-- Boutons finaux -->
+                <div class="final-buttons">
+                    <button class="btn btn-primary" onclick="restartQuiz()">Recommencer</button>
+                    <button class="btn btn-secondary" onclick="downloadResults()">Télécharger les résultats</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
